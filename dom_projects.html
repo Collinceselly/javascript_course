@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p>YouTub Subscribe Button</p>
+    <button onclick="
+        subscribe()
+        
+    " class="subscribe_button">
+        Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under $40 = + $10 shipping.</p>
+    <p>Order over $40 = FREE Shipping.</p>
+    <input type="text" placeholder="cost of order" name="amount" class="js_cost_input" onkeydown="
+    calculateOnKeyDown(event)
+    ">
+    <button onclick="
+        calculateTotal()
+    
+        ">Calculate
+    </button>
+    <p class="js_cost_display"></p>
+
+    <script>
+        function calculateOnKeyDown(event) {
+            if (event.key === 'Enter') {
+                calculateTotal()
+    }
+        }
+
+        function calculateTotal() {
+            const inputElement = document.querySelector('.js_cost_input')
+            let cost = inputElement.value
+            cost = Number(cost)
+            console.log(typeof cost)
+            if (cost < 40) {
+                cost += 10;
+            }
+            else {
+                cost = cost;
+            }
+            document.querySelector('.js_cost_display').innerHTML = `$${cost}`;
+        }
+
+        function subscribe() {
+            const buttonElement = document.querySelector('.subscribe_button');
+            if (buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerText = 'Subscribed';
+            }
+            else {
+                buttonElement.innerText = 'Subscribe';
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

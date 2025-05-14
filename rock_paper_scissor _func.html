@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rps</title>
+</head>
+<body>
+    <h3>Rock Paper Scissor</h3>
+    <button onclick="
+        playGame('Rock')
+        ">Rock
+    </button>
+    <button onclick="
+        playGame('Paper')
+        ">Paper
+    </button>
+    <button onclick="
+        playGame('Scissor')
+        ">Scissor
+    </button>
+
+    <script>
+        function playGame(playerMove) {
+            randomItem = computerChoice()
+            
+            if (playerMove === 'Scissor') {
+                if (randomItem === 'Scissor') {
+                result = 'You tie';
+                alert(`You picked ${playerMove}, the computer picked ${randomItem}. ${result}`)
+            }
+            else if (randomItem === 'Rock') {
+                result = 'You lose';
+                alert(`You picked ${playerMove}, the computer picked ${randomItem}. ${result}`)
+            }
+            else {
+                result = 'You win';
+                alert(`You picked ${playerMove}, the computer picked ${randomItem}. ${result}`)
+            }
+            }
+
+            else if (playerMove === 'Paper') {
+                randomItem = computerChoice()
+                if (randomItem === 'Paper') {
+                    result = 'You tie';
+                    alert(`You picked ${playerMove}, the computer picked ${randomItem}. ${result}`)
+                }
+                else if (randomItem === 'Rock') {
+                    result = 'You win';
+                    alert(`You picked ${playerMove}, the computer picked ${randomItem}. ${result}`)
+                }
+                else {
+                    result = 'You lose';
+                    alert(`You picked ${playerMove}, the computer picked ${randomItem}. ${result}`)
+                }
+                    }
+            
+            else if (playerMove === 'Rock') {
+                let randomItem = computerChoice()
+                if (randomItem === 'Rock') {
+                    result = 'You tie';
+                    alert(`You picked ${playerMove}, the computer picked ${randomItem}. ${result}`)
+                }
+                else if (randomItem === 'Paper') {
+                    result = 'You lose';
+                    alert(`You picked ${playerMove}, the computer picked ${randomItem}. ${result}`)
+                }
+                else {
+                    result = 'You win';
+                    alert(`You picked ${playerMove}, the computer picked ${randomItem}. ${result}`)
+                }
+
+                    }
+            
+        }
+        
+        
+        function computerChoice() {
+            let randomItem = ''
+            const items = ['Rock', 'Paper', 'Scissor']
+            randomItem = items[Math.floor(Math.random() * items.length)];
+            
+            return randomItem
+        }
+        
+
+        let result = '';
+        
+
+    </script>
+</body>
+</html>

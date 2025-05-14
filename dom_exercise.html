@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_EX</title>
+</head>
+<body>
+    <button>9a</button>
+    <button class="js_9b" onclick="
+        buttoChange()
+        ">9b</button>
+    
+    <p></p>
+
+    <button class="js_head" onclick="displayTossHead()">Head</button>
+    <button class="js_tail" onclick="displayTossTail()">Tail</button>
+    <p class="js_display_toss"></p>
+
+    <input type="text" class="js_input" placeholder="Enter your name" onkeydown="onEnterKeydown(event)">
+    <button class="js_submit" onclick="displayName()">Submit</button>
+    <p class="js_display_name"></p>
+
+    <input type="text" placeholder="Type something" class="type_and_display" onkeyup="typeAndDisplay(event)">
+    <p class="print_type"></p>
+    <script>
+
+        // Change the button to 9b or otherwise 9a
+        function buttoChange() {
+            let buttonElement = (document.querySelector('.js_9b'));
+            if (buttonElement.innerHTML === '9b') {
+                buttonElement.innerHTML = '9a';
+            }
+            else {
+                buttonElement.innerHTML = '9b';
+            }
+        }
+
+        // Display the choice for head
+        function displayTossHead() {
+            const headElement = document.querySelector('.js_head');
+            const textElement = headElement.innerText;
+
+            document.querySelector('.js_display_toss').innerHTML = `You chose: ${textElement}`
+        }
+
+        // Display the choice for tail
+        function displayTossTail() {
+            const headElement = document.querySelector('.js_tail');
+            const textElement = headElement.innerText;
+
+            document.querySelector('.js_display_toss').innerHTML = `You chose: ${textElement}`
+        }
+        
+        // Displaying the name from an input on submit button
+        function displayName() {
+            input_value = document.querySelector('.js_input').value
+
+            document.querySelector('.js_display_name').innerHTML = `Your name is: ${input_value}`
+        }
+
+        // Display the name from an input on Enter keydown
+        function onEnterKeydown(event) {
+            if (event.key === 'Enter') {
+                displayName()
+            }
+        }
+
+        function typeAndDisplay(event) {
+            const inputElement = document.querySelector('.type_and_display');
+
+            document.querySelector('.print_type').innerHTML = inputElement.value;
+        }
+
+    </script>
+</body>
+</html>

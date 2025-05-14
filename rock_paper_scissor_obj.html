@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rps</title>
+</head>
+<body>
+    <h3>Rock Paper Scissor</h3>
+    <button onclick="
+        playGame('Rock')
+        ">Rock
+    </button>
+    <button onclick="
+        playGame('Paper')
+        ">Paper
+    </button>
+    <button onclick="
+        playGame('Scissor')
+        ">Scissor
+    </button>
+    <button onclick="
+        result_track.win = 0;
+        result_track.lose = 0;
+        result_track.tie = 0;
+        localStorage.removeItem('result_track');
+        ">Reset Score
+    </button>
+
+    <script>
+        if (!result_track) {
+            win = 0;
+            lose = 0;
+            tie = 0;
+        }
+
+        let result = '';
+        
+        let result_track = JSON.parse(localStorage.getItem('result_track'))
+
+        function playGame(playerMove) {
+            randomItem = computerChoice()
+            
+            if (playerMove === 'Scissor') {
+                if (randomItem === 'Scissor') {
+                result = 'You tie';
+            }
+            else if (randomItem === 'Rock') {
+                result = 'You lose';
+               
+            }
+            else {
+                result = 'You win';
+                }
+            }
+
+            else if (playerMove === 'Paper') {
+                randomItem = computerChoice()
+                if (randomItem === 'Paper') {
+                    result = 'You tie';
+                   
+                }
+                else if (randomItem === 'Rock') {
+                    result = 'You win';
+                    
+                }
+                else {
+                    result = 'You lose';
+                   
+                }
+                    }
+            
+            else if (playerMove === 'Rock') {
+                let randomItem = computerChoice()
+                if (randomItem === 'Rock') {
+                    result = 'You tie';
+                  
+                }
+                else if (randomItem === 'Paper') {
+                    result = 'You lose';
+                    
+                }
+                else {
+                    result = 'You win';
+    
+                }
+
+            }
+
+            if (result === 'You win') {
+                result_track.win += 1
+            }
+            else if (result === 'You lose') {
+                result_track.lose += 1
+            }
+            else if (result === 'You tie') {
+                result_track.tie += 1
+            }
+
+            localStorage.setItem('result_track', JSON.stringify(result_track))
+
+            alert(`You picked ${playerMove}, the computer picked ${randomItem}. ${result}
+Wins : ${result_track.win}, Losses : ${result_track.lose}, Ties : ${result_track.tie}`)
+        }
+        
+        function computerChoice() {
+            let randomItem = ''
+            const items = ['Rock', 'Paper', 'Scissor']
+            randomItem = items[Math.floor(Math.random() * items.length)];
+            
+            return randomItem
+        }
+        
+
+    </script>
+</body>
+</html>
