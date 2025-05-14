@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYS AND LOOPS</title>
+</head>
+<body>
+    <script>
+        const myArray = [10,20, 30];
+        console.log(myArray);
+        console.log(myArray[0]);
+
+        myArray[0] = 99;
+        console.log(myArray)
+
+        const myArray2 = [1, 'Hello', true, {name:'socks'}, [1, 2]]
+
+        console.log(myArray2.length)
+        console.log(myArray2[3])
+        console.log(myArray2[4])
+        console.log(myArray2[4][1])
+
+        myArray2.push(200)
+        console.log(myArray2)
+
+        myArray2.pop(200)
+        console.log(myArray2)
+
+        myArray.splice(0, 1)
+        console.log(myArray)
+
+        myArray.push(40)
+        console.log(myArray)
+
+        myArray.splice(0, 2)
+        console.log(myArray)
+    </script>
+</body>
+</html>
