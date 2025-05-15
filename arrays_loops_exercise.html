@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYLOOPEXERCISE</title>
+</head>
+<body>
+    <script>
+        // const num = [10, 20, 30] // creating an array with values
+
+        // num[num.length-1] = 99 // Assigning the last value of the array to 99
+
+        // // A function that returns the last value of an array
+        // function getLastValue(array) {
+        //    return array[array.length-1]
+        // }
+
+        // console.log(getLastValue([1, 20, 22, 24, 5]))
+        // console.log(getLastValue(['hi', 'hello', 'good']))
+
+
+        // // A function that swaps the first with the last value and vice versa in the array
+        // function arraySwap(array) {
+        //     const first_value = array[0];
+        //     const last_value = array[array.length-1];
+            
+        //     array[0] = last_value;
+        //     array[array.length-1] = first_value;
+
+        //     return array
+
+        // }
+
+        // console.log(arraySwap([1, 20, 22, 24, 5]));
+        // console.log(arraySwap(['hi', 'hello', 'good']));
+
+        // // A loop counting from 0 to 10 at an interval of 2
+        // for (i = 0; i < 10; i+=2) {
+        //     console.log(i)
+        // }
+
+        // // Counting down from 5 to 1
+        // for (i = 5; i > 0; i--) {
+        //     console.log(i)
+        // }
+
+        // let i = 0
+
+        // while(i <= 10) {
+        //     console.log(i)
+        //     i+=2
+        // }
+
+
+        // const num = [1, 2, 3]
+        // const num1 = []
+
+        // for(let i = 0; i < num.length; i++) {
+        //     num1.push(num[i]+1)
+        // }
+        // console.log(num1)
+
+        // const newArray = []
+
+        // function addOne(array) {
+        //     for (i = 0; i < array.length; i++) {
+        //         newArray.push(array[i]+1)
+        //     }
+        //     return newArray
+        // }
+        // console.log(addOne([1,2,3]))
+        // console.log(addOne([-2, -1, 0, 99]))
+
+        
+        function MinMax(nums) {
+            maxNum = nums[0]
+            minNum = nums[0]
+            for (i = 0; i < nums.length; i++) {
+                if (nums[i] > maxNum) {
+                    maxNum = nums[i]
+                }
+
+                if (nums[i] < minNum) {
+                    minNum = nums[i]
+                }
+            }
+            return maxNum, minNum
+        }
+        MinMax([1, -3, 5])
+        console.log(maxNum)
+        console.log(minNum)
+    </script>
+</body>
+</html>
