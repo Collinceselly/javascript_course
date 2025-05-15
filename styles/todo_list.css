@@ -1,0 +1,53 @@
+/* body {
+    background-color: red;
+} */
+
+.css_todo_text {
+    padding: 10px;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.css_todo_date {
+    padding: 10px;
+    font-family: Arial;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.css_add_button {
+    /* margin-left: 10px; */
+    padding: 15px; 
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    font-family: Arial;
+    cursor: pointer;
+}
+
+.todo_display_grid, .todo_input_grid  {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 20px;
+    row-gap: 20px;
+    align-items: center;
+}
+
+.todo_input_grid {
+    margin-bottom: 20px;
+}
+
+.todo_display_grid {
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.delete_button {
+    background-color: darkred;
+    color: white;
+    padding: 10px;
+    font-family: Arial;
+    font-size: 20px;
+    cursor: pointer;
+}
