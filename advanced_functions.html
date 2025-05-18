@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVANCED FUNCTIONS</title>
+</head>
+<body>
+
+    <button onclick="" class="js_button">Click</button>
+    <script>
+        /*
+        const buttonElement = document.querySelector('.js_button');
+
+        const eventListner = () => {
+            console.log('Click')
+        }
+
+        buttonElement.addEventListener('click', eventListner)
+
+        buttonElement.removeEventListener('click', eventListner)
+
+        buttonElement.addEventListener('click', () => {
+            console.log('Click again')
+        }) */
+
+        /*
+        function greeting() {
+            console.log('Hello')
+        }
+        greeting();
+
+        const num = 2;
+        const function1 = function greeting() {
+            console.log('Hello2');
+        };
+
+        console.log(function1);
+        console.log(typeof function1)
+        greeting()
+
+        const object1 = {
+            num: 2,
+            fun: function greeting() {
+                console.log('Hello3')
+            }
+        }
+
+        object1.fun()
+
+        function display(param) {
+            console.log(param)
+        }
+        display(2)
+
+        function run(param) {
+            param()
+        }
+        run(function() {
+            console.log('Hello4')
+        }) */
+
+        /*
+        setTimeout(function() {
+            console.log('Timeout')
+        }, 3000)
+
+        console.log('Next line')
+
+        setInterval(function() {
+            console.log('Interval')
+        }, 3000);
+
+        console.log('Next line 2') */
+
+        // [
+        //     'make dinner',
+        //     'wash dishes',
+        //     'watch youtube',
+        // ].forEach((value, index) => {
+
+        //     if (value === 'wash dishes') {
+        //         return
+        //     }
+
+        //     console.log(index)
+        //     console.log(value)
+
+        // })
+
+        // const arrowFunction = () => {
+        //     console.log('Hello')
+        // } 
+        // arrowFunction()
+
+        // const add2Numbers = (num1, num2) => {
+        //     console.log(Number(num1) + Number(num2))
+        // }
+        // add2Numbers(3, 4)
+
+        // // const shortCut = () => 2 + 3;
+        // // console.log(shortCut())
+
+
+        // ['collince','Godwins'].forEach((name) => {console.log(name)})
+
+
+        /*
+        [
+            'Collince',
+            'Godwins',
+            'Veldone',
+            'Movine'
+        ].forEach((name) => {
+            console.log(name)
+        })
+            */
+
+        console.log([1, -3, 5].filter((value, index) => {
+            return value >= 0
+            /*
+            if (value >= 0) {
+                return true
+            }
+            else {
+                return false
+            }*/
+        }));
+
+        console.log([1, 1, 3].map((value, index) => {
+            return value + 2
+        }));
+
+      
+    </script>
+</body>
+</html>

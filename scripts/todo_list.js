@@ -15,13 +15,38 @@ function addTodo() {
 
     textelement.value = '' // Resets back the input box an empty string thereby displaying the placeholder text
 
-    console.log(todoList)
-
     displayTodo()
 }
 
+document.querySelector('.js_add_button')
+    .addEventListener('click', () => {
+        addTodo()
+    })
+
+
 function displayTodo() {
     let todoListHTML = '';
+
+
+    ///// USING FOR EACH USING THE ARROW FUNCTION
+    /* todoList.forEach((todoObj, index) => {
+        const name = todoObj.name; // fetching the todo from the object
+        const dueDate = todoObj.dueDate; // fetching the date from the object
+        // const { name, dueDate } = todoObj;
+
+        // displaying the todo and duedate on the page and adding a delete functionality
+        const html = `
+            <div>${name}</div>
+            <div>${dueDate}</div>
+                 
+            <button class="delete_button" onclick="
+                todoList.splice(${index}, 1);
+                displayTodo();
+            ">Delete</button>
+            `;
+        todoListHTML += html
+
+    }) */
 
     for (let i=0; i<todoList.length; i++) {
         const todoObj = todoList[i];
@@ -34,14 +59,26 @@ function displayTodo() {
             <div>${name}</div>
             <div>${dueDate}</div>
                  
-            <button class="delete_button" onclick="
-                todoList.splice(${i}, 1);
+            <button class="delete_button js_delete_button"
                 displayTodo();
             ">Delete</button>
             `;
         todoListHTML += html
 
         document.querySelector('.js_todo_display').innerHTML = todoListHTML; // rendering the fetched text and date on the paragraph template as innerHTML
+
+        document.querySelectorAll('.js_delete_button')
+            .forEach((deleteButtonElement, index) => {
+                deleteButtonElement.addEventListener('click', () => {
+                    todoList.splice(index, 1);
+                    displayTodo();
+                });
+
+            });
+
+
     }
+
+
     
 }

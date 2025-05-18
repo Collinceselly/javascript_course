@@ -6,6 +6,61 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
   updateScoreElement();
 
+  let isAutoPlaying = false;
+  let intervalId;
+
+  function autoplay() {
+
+    if (!isAutoPlaying) {
+      intervalId = setInterval(() => {
+        const playerMove = pickComputerMove(); // Ensure that both the player move and computer move are auto generated
+        playGame(playerMove)
+      }, 1000);
+      isAutoPlaying = true;
+
+    }
+    else{
+      clearInterval(intervalId);
+      isAutoPlaying = false;
+    }
+    
+  }
+
+  document.querySelector('.js_rock_button')  // Using addEventListner to rock other than using regular onclick function - recommended option.
+    .addEventListener('click', () => {
+      playGame('rock')
+    })
+
+  document.querySelector('.js_paper_button') // Using addEventListner to paper other than using regular onclick function - recommended option.
+    .addEventListener('click', () => {
+      playGame('paper')
+    })
+
+
+    document.querySelector('.js_autoplay_button')
+      .addEventListener('click', () => {
+        autoplay()
+      })
+  
+    
+    document.body.addEventListener('keydown', (event) => {
+       if (event.key === 'r') {
+        playGame('rock')
+       }
+
+       else if (event.key === 'p') {
+        playGame('paper')
+       }
+
+       else if (event.key === 's') {
+        playGame('scissors')
+       }
+      
+       else {
+        alert('You have hit the wrong key')
+       }
+    })
+
   function playGame(playerMove) {
     const computerMove = pickComputerMove();
 
@@ -80,3 +135,5 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
     return computerMove;
   }
+
+  

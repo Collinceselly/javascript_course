@@ -33,7 +33,7 @@ body {
     margin-top: 60px;
 }
 
-.css_reset {
+.css_reset, .css_autoplay_button {
     border: none;
     background-color: white;
     font-size: 15px;
